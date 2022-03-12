@@ -1,21 +1,25 @@
 import React, { useState } from "react";
-import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { atom, useSetRecoilState } from "recoil";
-import { todoListState } from "../recoil/store";
+import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { useDispatch } from "react-redux";
+import { addCard } from "../redux/cardsSlice";
 
 export const AddCard = () => {
     const [input, setInput] = useState('');
-    const setTodoList = useSetRecoilState(todoListState);
+    //const setTodoList = useSetRecoilState(todoListState);
 
-    const addItem = () => {
-        setTodoList((list) => [
-            ...list,
-            {
+    const dispatch = useDispatch();
+
+
+    const addItem = (e: any) => {
+        e.preventDefault();
+        console.log('adding card', input)
+        dispatch(
+            addCard({
                 key: Math.random(),
                 todo: input,
                 isComplete: false
-            },
-        ]);
+            })
+        );
         setInput('')
     }
 

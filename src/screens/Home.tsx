@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Button, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TextInput, View } from "react-native";
-import { atom, useRecoilValue, useSetRecoilState } from "recoil";
+import { useSelector } from "react-redux";
 import { AddCard } from "../components/AddCard";
 import { Card } from "../components/Card";
 import { CardFilters } from "../components/CardFilters";
 import { CardStats } from "../components/CardStats";
-import { filteredToDoListState, todoListState } from "../recoil/store";
 
 const randomInt = (min:number, max:number): number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -14,7 +13,10 @@ const randomInt = (min:number, max:number): number => { // min and max included
   
 export const Home = () => {
     const [bg, setBg] = useState('');
-    const todoList = useRecoilValue(filteredToDoListState);
+
+    const todoList = useSelector((state:any)=> {
+        return state.cards
+    })
 
     const arrColors = [
         '#aacaaa', // green
@@ -34,7 +36,9 @@ export const Home = () => {
         '#aacaaa',
     ]
     
+    console.log(todoList)
     useEffect( () => {
+        console.log(todoList)
         setBg(arrColors[randomInt(0,arrColors.length)])
     }, [todoList])
 
@@ -48,15 +52,15 @@ export const Home = () => {
                 <ScrollView style= {[styles.background, {backgroundColor: bg}]}>
                     <Text style = {styles.title}> To Do List </Text>
                     <View style = {styles.cardList}>
-                        <CardFilters style = {styles.filter}/>
+                        {/* <CardFilters style = {styles.filter}/> */}
                         <AddCard/>
-                        { todoList.map((item)=> (
+                        { todoList.map((item: any)=> (
                             <Card key = {item.key} item = {item}>
                                 {item}
                             </Card>
                         ))}
                     </View>
-                    <CardStats/>
+                    {/* <CardStats/> */}
                 </ScrollView>
             </KeyboardAvoidingView>
             </>

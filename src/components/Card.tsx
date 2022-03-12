@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import CheckBox from '@react-native-community/checkbox'
-import { useRecoilState } from "recoil";
-import { todoListState } from "../recoil/store";
-import { CardItem } from '../recoil/store'
+import { useDispatch, useSelector } from "react-redux";
+import { CardItem, deleteCard } from "../redux/cardsSlice";
+
 
 const replaceItemAtIndex = (arr: CardItem[], index: number, val: CardItem) => {
     return [...arr.slice(0, index), val, ...arr.slice(index+1)];
@@ -13,8 +12,12 @@ const removeItemAtIndex = (arr: CardItem[], index: number) => {
     return [...arr.slice(0, index), ...arr.slice(index+1)]
 }
 
-export const Card = ({item} : any) => {
-    const [cardList, setCardList] = useRecoilState(todoListState);
+export const Card = ({item} : any) => { 
+    const dispatch = useDispatch();
+    const cardList = useSelector((state:any)=> {
+        return state.cards
+    })
+    
     const index= cardList.findIndex((card: CardItem)=> card === item)
 
     const editItemText = (text: string) => {
@@ -22,21 +25,23 @@ export const Card = ({item} : any) => {
             ...item,
             todo: text,
         });
-
-        setCardList(newList)
+        //setCardList(newList)
     }
 
-    const toggleComplete = () => {
-        const newList = replaceItemAtIndex(cardList, index, {
-            ...item,
-            isComplete: !item.isComplete,
-        });
-        setCardList(newList);
-    };
+    // const toggleComplete = () => {
+    //     const newList = replaceItemAtIndex(cardList, index, {
+    //         ...item,
+    //         isComplete: !item.isComplete,
+    //     });
+    //     setCardList(newList);
+    // };
 
     const deleteItem = () => {
-        const newList = removeItemAtIndex(cardList, index);
-        setCardList(newList)
+        dispatch(
+            deleteCard({
+                key: item.key
+            })
+        )
     }
 
     return ( 
@@ -45,7 +50,8 @@ export const Card = ({item} : any) => {
                 style = {styles.textInput}
                 value ={item.todo} 
                 multiline = {true}
-                onChangeText={ text => editItemText(text) }/>
+                // onChangeText={ text => editItemText(text) }
+                />
             <View style={styles.row}>
                 <TouchableOpacity
                     style = {styles.delete}
@@ -56,7 +62,8 @@ export const Card = ({item} : any) => {
                     style = {
                         item.isComplete ? (styles.statusComplete) : (styles.statusInProgress)
                     }
-                    onPress= {toggleComplete}>
+                    // onPress= {toggleComplete}
+                    >
                         <Text style = { styles.buttonText}>{ item.isComplete ? ('Is Complete') : ('In Progress')}</Text>
                 </TouchableOpacity> 
             </View>
