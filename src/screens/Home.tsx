@@ -5,6 +5,7 @@ import { AddCard } from "../components/AddCard";
 import { Card } from "../components/Card";
 import { CardFilters } from "../components/CardFilters";
 import { CardStats } from "../components/CardStats";
+import { CardItem } from "../redux/cardsSlice";
 
 const randomInt = (min:number, max:number): number => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -15,7 +16,14 @@ export const Home = () => {
     const [bg, setBg] = useState('');
 
     const todoList = useSelector((state:any)=> {
-        return state.cards
+        switch (state.filter) {
+            case 'Completed':
+                return state.cards.items.filter((item: CardItem) => item.isComplete) 
+            case 'InComplete':
+                return state.cards.items.filter((item: CardItem) => !item.isComplete) 
+            default:
+                return state.cards.items
+        }
     })
 
     const arrColors = [
@@ -36,9 +44,7 @@ export const Home = () => {
         '#aacaaa',
     ]
     
-    console.log(todoList)
     useEffect( () => {
-        console.log(todoList)
         setBg(arrColors[randomInt(0,arrColors.length)])
     }, [todoList])
 
@@ -47,12 +53,12 @@ export const Home = () => {
                 <StatusBar translucent backgroundColor= {bg}/>
             </SafeAreaView>
             <KeyboardAvoidingView
-                behaviour = {Platform.OS === 'ios' ? 'padding' : 'height'}
+                behavior= {Platform.OS === 'ios' ? 'padding' : 'height'} 
             >
                 <ScrollView style= {[styles.background, {backgroundColor: bg}]}>
                     <Text style = {styles.title}> To Do List </Text>
                     <View style = {styles.cardList}>
-                        {/* <CardFilters style = {styles.filter}/> */}
+                        <CardFilters />
                         <AddCard/>
                         { todoList.map((item: any)=> (
                             <Card key = {item.key} item = {item}>

@@ -1,35 +1,41 @@
-// import { Picker } from "@react-native-picker/picker"
-// import React from "react"
-// import { StyleSheet, Text } from "react-native"
-// import { useRecoilState } from "recoil"
-// import { todoListFilterState } from "../recoil/store"
+import { Picker } from "@react-native-picker/picker"
+import React, { useState } from "react"
+import { StyleSheet, Text } from "react-native"
+import { useDispatch } from "react-redux"
+import { filters } from "../redux/cardsSlice";
 
-// export const CardFilters = () => {
+export const CardFilters = () => {
+    const [filter, setFilter] = useState('All');
 
-//     // const [filter, setFilter] = useRecoilState(todoListFilterState)
+    const dispatch = useDispatch();
 
-//     const updateFilter = (value: string) => {
-//         setFilter(value)
-//     }
+    const updateFilter = (value: string) => {
+        dispatch (
+            filters({
+                filter: value
+            })
+        )
+        setFilter(value)
+    }
 
-//     return ( 
-//         <>
-//         <Text style = {styles.options}> Filter By</Text>
-//         <Picker
-//             selectedValue={filter}
-//             onValueChange= {(value) => updateFilter(value)}>
-//             <Picker.Item style={styles.options} label='Show All' value='All'/>
-//             <Picker.Item style={styles.options} label='Show Completed' value='Completed'/>
-//             <Picker.Item style={styles.options} label='Show Uncompleted' value='Uncompleted'/>
-//         </Picker>
-//         </>
-//     )
-// }
+    return ( 
+        <>
+        <Text style = {styles.options}> Filter By</Text>
+        <Picker
+            selectedValue= { filter }
+            onValueChange= {(value: string) => updateFilter(value)}>
+            <Picker.Item style={styles.options} label='Show All' value='All'/>
+            <Picker.Item style={styles.options} label='Show Completed' value='Completed'/>
+            <Picker.Item style={styles.options} label='Show Incomplete' value='Incomplete'/>
+        </Picker>
+        </>
+    )
+}
 
-// const styles = StyleSheet.create({
-//     options: {
-//         fontSize: 18,
-//         fontWeight: '300'
-//     }
-// })
+const styles = StyleSheet.create({
+    options: {
+        fontSize: 18,
+        fontWeight: '300'
+    }
+})
 
