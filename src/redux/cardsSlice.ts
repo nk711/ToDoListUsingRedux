@@ -18,12 +18,13 @@ export const cardsSlice = createSlice({
                 key: action.payload.key,
                 todo: action.payload.todo,
                 isComplete: action.payload.isComplete
-            }
+            } 
             console.log('state items', state.items)
             state.items.push(newCard);
+
         },
         deleteCard: (state, action) => {
-            return state.filter((card)=> card.key !==action.payload.key);
+            state.items = state.items.filter((card: CardItem)=> card.key !==action.payload.key);
         },
         editCard: (state, action) => {
             state.items.map((card: CardItem)=> {

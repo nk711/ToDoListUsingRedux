@@ -14,9 +14,8 @@ const randomInt = (min:number, max:number): number => { // min and max included
   
 export const Home = () => {
     const [bg, setBg] = useState('');
-
     const todoList = useSelector((state:any)=> {
-        switch (state.filter) {
+        switch (state.cards.filter) {
             case 'Completed':
                 return state.cards.items.filter((item: CardItem) => item.isComplete) 
             case 'InComplete':
@@ -66,7 +65,7 @@ export const Home = () => {
                             </Card>
                         ))}
                     </View>
-                    {/* <CardStats/> */}
+                       <CardStats/>
                 </ScrollView>
             </KeyboardAvoidingView>
             </>
