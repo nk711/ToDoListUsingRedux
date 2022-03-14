@@ -19,9 +19,7 @@ export const cardsSlice = createSlice({
                 todo: action.payload.todo,
                 isComplete: action.payload.isComplete
             } 
-            console.log('state items', state.items)
             state.items.push(newCard);
-
         },
         deleteCard: (state, action) => {
             state.items = state.items.filter((card: CardItem)=> card.key !==action.payload.key);

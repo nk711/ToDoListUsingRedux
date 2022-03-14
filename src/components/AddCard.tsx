@@ -9,10 +9,8 @@ export const AddCard = () => {
 
     const dispatch = useDispatch();
 
-
     const addItem = (e: any) => {
         e.preventDefault();
-        console.log('adding card', input)
         dispatch(
             addCard({
                 key: Math.random(),
