@@ -6,6 +6,13 @@ export interface CardItem {
     isComplete: boolean,
 }
 
+export interface State {
+    cards: {
+        filter: string,
+        items: CardItem []
+    }
+}
+
 export const cardsSlice = createSlice({
     name: 'cards',
     initialState: {

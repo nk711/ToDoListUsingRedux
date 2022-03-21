@@ -2,11 +2,11 @@ import { Picker } from "@react-native-picker/picker"
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
 import { useSelector } from "react-redux"
-import { CardItem } from "../redux/cardsSlice"
+import { CardItem, State } from "../redux/cardsSlice"
 
 export const CardStats = () => {
     
-    const todoList = useSelector((state:any)=> {
+    const todoList = useSelector((state: State)=> {
         switch (state.cards.filter) {
             case 'Completed':
                 return state.cards.items.filter((item: CardItem) => item.isComplete) 

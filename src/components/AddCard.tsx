@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import React, { EventHandler, useState } from "react";
+import { GestureResponderEvent, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useDispatch } from "react-redux";
 import { addCard } from "../redux/cardsSlice";
 
@@ -9,7 +9,7 @@ export const AddCard = () => {
 
     const dispatch = useDispatch();
 
-    const addItem = (e: any) => {
+    const addItem = (e: GestureResponderEvent) => {
         e.preventDefault();
         dispatch(
             addCard({
