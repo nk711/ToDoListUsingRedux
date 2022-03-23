@@ -11,7 +11,7 @@ module.exports = {
     'json',
     'node',
   ],
-  setupFiles: ['./testing/setupJest.js'],
+  setupFiles: ['./test-config/setupJest.js'],
   transformIgnorePatterns: [
     'node_modules/(?!(jest-)?@react-native|react-native|@react-navigation)',
   ],

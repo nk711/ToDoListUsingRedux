@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text } from 'react-native';
-import { Provider } from 'react-redux';
+import { Provider as StoreProvider } from 'react-redux';
 import { Home } from './src/screens/Home';
 import store from './src/redux/store'
 const App = () => {
   return (
-    <Provider store={store}>
+    <StoreProvider store={store}>
       <Home/>
-    </Provider>
+    </StoreProvider>
   );
 };
  
