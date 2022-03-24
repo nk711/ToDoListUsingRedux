@@ -54,7 +54,7 @@ export const Home = () => {
             <KeyboardAvoidingView
                 behavior= {Platform.OS === 'ios' ? 'padding' : 'height'} 
             >
-                <ScrollView style= {[styles.background, {backgroundColor: bg}]}>
+                <ScrollView testID = "Home.ScrollView" style= {[styles.background, {backgroundColor: bg}]}>
                     <Text style = {styles.title}> To Do List </Text>
                     <View style = {styles.cardList}>
                         <CardFilters />

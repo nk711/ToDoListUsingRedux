@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders as expected 1`] = `
+exports[`Check Home Screen Components renders as expected 1`] = `
 Array [
   <RCTSafeAreaView
     emulateUnlessSupported={true}
@@ -21,10 +21,11 @@ Array [
             "padding": 20,
           },
           Object {
-            "backgroundColor": "#4ab6c2",
+            "backgroundColor": "#aacaaa",
           },
         ]
       }
+      testID="Home.ScrollView"
     >
       <View>
         <Text
@@ -120,6 +121,7 @@ Array [
                   "width": "100%",
                 }
               }
+              testID="AddCard.Input"
               value=""
             />
             <View
@@ -139,6 +141,7 @@ Array [
                   "opacity": 1,
                 }
               }
+              testID="AddCard.Button"
             >
               <Text
                 style={

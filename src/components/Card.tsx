@@ -41,6 +41,7 @@ export const Card = ({item} : any) => {
     return ( 
         <View style = {styles.container}>
             <TextInput
+                testID= "Card.Input"
                 style = {styles.textInput}
                 value ={item.todo} 
                 multiline = {true}
@@ -48,11 +49,13 @@ export const Card = ({item} : any) => {
                 />
             <View style={styles.row}>
                 <TouchableOpacity
+                    testID="Card.Delete"
                     style = {styles.delete}
                     onPress= {deleteItem}>
                         <Text style = { styles.buttonText}>Delete</Text>
                 </TouchableOpacity> 
                 <TouchableOpacity
+                    testID="Card.IsComplete"
                     style = {
                         item.isComplete ? (styles.statusComplete) : (styles.statusInProgress)
                     }
