@@ -12,7 +12,6 @@ export const AddCard = () => {
     const addItem = (e: GestureResponderEvent) => {
         dispatch(
             addCard({
-                key: Math.random(),
                 todo: input,
                 isComplete: false
             })
@@ -27,14 +26,14 @@ export const AddCard = () => {
     return (
         <View style = { styles.column }>
             <TextInput
-                testID="AddCard.Input"
+                testID="AddCard-Input"
                 style = { styles.textInput}
                 placeholder = 'Add something here you need to do!'
                 value ={input} 
                 multiline = { true }
                 onChangeText={ text => onChange(text) }/>
             <TouchableOpacity 
-                testID= "AddCard.Button"
+                testID= "AddCard-Button"
                 style = { styles.addButton }
                 onPress= {addItem}>
                     <Text style = {styles.addButtonText}> + Add a card </Text>

@@ -1,5 +1,307 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Adding a card user can add a card and the redux state will be updated with the new card. 1`] = `
+Array [
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+  />,
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Array [
+          Object {
+            "height": "100%",
+            "padding": 20,
+          },
+          Object {
+            "backgroundColor": "#aacaaa",
+          },
+        ]
+      }
+      testID="Home.ScrollView"
+    >
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+           To Do List 
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ebecf0",
+              "borderRadius": 15,
+              "padding": 25,
+              "paddingBottom": 50,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "300",
+              }
+            }
+          >
+             Filter By
+          </Text>
+          <View>
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Show All",
+                    "testID": undefined,
+                    "textColor": undefined,
+                    "value": "All",
+                  },
+                  Object {
+                    "label": "Show Completed",
+                    "testID": undefined,
+                    "textColor": undefined,
+                    "value": "Completed",
+                  },
+                  Object {
+                    "label": "Show Incomplete",
+                    "testID": undefined,
+                    "textColor": undefined,
+                    "value": "Incomplete",
+                  },
+                ]
+              }
+              numberOfLines={1}
+              onChange={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              placeholder="Add something here you need to do!"
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "fontSize": 20,
+                  "fontWeight": "300",
+                  "lineHeight": 25,
+                  "marginTop": 10,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="AddCard.Input"
+              value=""
+            />
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginVertical": 10,
+                  "opacity": 1,
+                }
+              }
+              testID="AddCard.Button"
+            >
+              <Text
+                style={
+                  Object {
+                    "fontSize": 20,
+                    "fontWeight": "300",
+                  }
+                }
+              >
+                 + Add a card 
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card.Input"
+              value="Test Message"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card.Delete"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card.IsComplete"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Text>
+             * Total items: 
+            1
+          </Text>
+          <Text>
+             * Items completed: 
+            0
+          </Text>
+          <Text>
+             * Items not completed: 
+            1
+          </Text>
+          <Text>
+             * Percent completed: 
+            0
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>,
+]
+`;
+
 exports[`Check Home Screen Components renders as expected 1`] = `
 Array [
   <RCTSafeAreaView

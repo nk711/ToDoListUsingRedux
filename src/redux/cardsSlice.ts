@@ -22,7 +22,7 @@ export const cardsSlice = createSlice({
     reducers: {
         addCard: (state, action) => {
             const newCard: CardItem = {
-                key: action.payload.key,
+                key: state.items.length+1,
                 todo: action.payload.todo,
                 isComplete: action.payload.isComplete
             } 
