@@ -75,6 +75,7 @@ describe('Testing Card Slices', () => {
 
 });
 
+//  went to the beach
 // describe('Testing individual Card property', () => {
 
 //   test('Card values are displayed correctly', () => {
