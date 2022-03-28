@@ -151,7 +151,7 @@ describe('Testing if stats render correctly', () => {
 
   });
 
-  test('if Completed Items is set as 5 items after setting 5 cards as complete', () => {
+  test('Check if Completed Items is set as 5 items after setting 5 cards as completed', () => {
     const {toJSON, getByTestId} = render(component);    
     for (let i= 1; i<6; i++) {
       let isCompleteButton = getByTestId('Card-IsComplete-'+i);
@@ -161,7 +161,7 @@ describe('Testing if stats render correctly', () => {
     expect(completedItems.props.children).toEqual([" * Items completed: ", 5]);
   });
 
-  test('Check if Total Items label is set as 10 items after setting 5 cards as complete', () => {
+  test('Check if Total Items label is set as 10 items after setting 5 cards as completed', () => {
     const {toJSON, getByTestId} = render(component);    
     const totalItems = getByTestId('TotalItems');
     expect(totalItems.props.children).toEqual([" * Total items: ", 10]);
@@ -169,14 +169,14 @@ describe('Testing if stats render correctly', () => {
   });
 
   
-  test('Check if Incomplete Items label is set as 5 items after setting 5 cards as complete ', () => {
+  test('Check if Incomplete Items label is set as 5 items after setting 5 cards as completed', () => {
     const {toJSON, getByTestId} = render(component);    
     const incompleteItems = getByTestId('IncompleteItems');
     expect(incompleteItems.props.children).toEqual([" * Items not completed: ", 5]);
   });
 
 
-  test('Check if percentage label is set as 50, after setting 5 cards as complete', () => {
+  test('Check if percentage label is set as 50, after setting 5 cards as completed', () => {
     const {toJSON, getByTestId} = render(component);    
     const percentageText = getByTestId('Percentage');
     expect(percentageText.props.children).toEqual([" * Percent completed: ", 50]);
