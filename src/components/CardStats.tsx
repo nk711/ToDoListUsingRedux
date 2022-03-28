@@ -25,10 +25,10 @@ export const CardStats = () => {
 
     return ( 
         <View style={styles.stats}>
-            <Text> * Total items: {total}</Text>
-            <Text> * Items completed: {totalCompleted}</Text>
-            <Text> * Items not completed: {totalIncomplete}</Text>
-            <Text> * Percent completed: {formattedPercentCompleted}</Text>
+            <Text testID="TotalItems"> * Total items: {total}</Text>
+            <Text testID="CompletedItems"> * Items completed: {totalCompleted}</Text>
+            <Text testID="IncompleteItems"> * Items not completed: {totalIncomplete}</Text>
+            <Text testID="Percentage"> * Percent completed: {formattedPercentCompleted}</Text>
         </View>
     )
 }
