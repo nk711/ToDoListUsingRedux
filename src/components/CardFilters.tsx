@@ -22,11 +22,12 @@ export const CardFilters = () => {
         <>
         <Text style = {styles.options}> Filter By</Text>
         <Picker
+            testID= "FilterInput"
             selectedValue= { filter }
             onValueChange= {(value: string) => updateFilter(value)}>
-            <Picker.Item style={styles.options} label='Show All' value='All'/>
-            <Picker.Item style={styles.options} label='Show Completed' value='Completed'/>
-            <Picker.Item style={styles.options} label='Show Incomplete' value='Incomplete'/>
+            <Picker.Item testID = 'FilterAll' style={styles.options} label='Show All' value='All'/>
+            <Picker.Item testID = 'FilterComplete' style={styles.options} label='Show Completed' value='Completed'/>
+            <Picker.Item testID = 'FilterIncomplete' style={styles.options} label='Show Incomplete' value='Incomplete'/>
         </Picker>
         </>
     )
