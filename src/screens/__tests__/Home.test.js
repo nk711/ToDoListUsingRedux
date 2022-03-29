@@ -191,31 +191,25 @@ describe('Testing if stats render correctly', () => {
 
 describe('Test Card Filter Component', () => {
 
-  test('Check if filter value can be changed to Incomplete', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Check if filter value can be changed to Completed', () => {
+    const { getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
-    //fireEvent.call(filterInput, 'Completed')
-    // const filterComplete = getByTestId('FilterComplete');
-    // fireEvent.press(filterComplete)
-    
-    fireEvent(filterInput, 'onChange', null, 'Completed')
-    //console.log(filterInput.props.selectedIndex)
+    fireEvent(filterInput, 'valueChange', 'Completed')
     expect(store.getState().cards.filter).toBe('Completed')
   });
 
-  // test('Check if filter value can be changed to Incomplete', () => {
-  //   const {toJSON, getByTestId} = render(component);    
-  //   const filterInput = getByTestId('FilterIncomplete');
-  //   fireEvent.changeText(filterInput, 'Order')
-  //   expect(store.getState().cards.filter).toBe('Incomplete')
-  // });
+  test('Check if filter value can be changed to Incomplete', () => {
+    const {getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'Incomplete')
+    expect(store.getState().cards.filter).toBe('Incomplete')
+  });
 
-  // test('Check if filter value can be changed to Incomplete', () => {
-  //   const {toJSON, getByText} = render(component);    
-  //   const filterInput = getByText('All');
-  //   fireEvent.
-  //   fireEvent.press(filterInput)
-  //   expect(store.getState().cards.filter).toBe('All')
-  // });
+  test('Check if filter value can be changed to All', () => {
+    const { getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'All')
+    expect(store.getState().cards.filter).toBe('All')
+  });
 })
 
