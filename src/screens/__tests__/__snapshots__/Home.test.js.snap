@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Adding a card user can add a card and the redux state will be updated with the new card. 1`] = `
+exports[`Check Home Screen Components should render as expected 1`] = `
 Array [
   <RCTSafeAreaView
     emulateUnlessSupported={true}
@@ -65,19 +65,19 @@ Array [
                 Array [
                   Object {
                     "label": "Show All",
-                    "testID": undefined,
+                    "testID": "FilterAll",
                     "textColor": undefined,
                     "value": "All",
                   },
                   Object {
                     "label": "Show Completed",
-                    "testID": undefined,
+                    "testID": "FilterComplete",
                     "textColor": undefined,
                     "value": "Completed",
                   },
                   Object {
                     "label": "Show Incomplete",
-                    "testID": undefined,
+                    "testID": "FilterIncomplete",
                     "textColor": undefined,
                     "value": "Incomplete",
                   },
@@ -94,6 +94,7 @@ Array [
                   undefined,
                 ]
               }
+              testID="FilterInput"
             />
           </View>
           <View
@@ -121,7 +122,7 @@ Array [
                   "width": "100%",
                 }
               }
-              testID="AddCard.Input"
+              testID="AddCard-Input"
               value=""
             />
             <View
@@ -141,7 +142,204 @@ Array [
                   "opacity": 1,
                 }
               }
-              testID="AddCard.Button"
+              testID="AddCard-Button"
+            >
+              <Text
+                style={
+                  Object {
+                    "fontSize": 20,
+                    "fontWeight": "300",
+                  }
+                }
+              >
+                 + Add a card 
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Text
+            testID="TotalItems"
+          >
+             * Total items: 
+            0
+          </Text>
+          <Text
+            testID="CompletedItems"
+          >
+             * Items completed: 
+            0
+          </Text>
+          <Text
+            testID="IncompleteItems"
+          >
+             * Items not completed: 
+            0
+          </Text>
+          <Text
+            testID="Percentage"
+          >
+             * Percent completed: 
+            0
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>,
+]
+`;
+
+exports[`Test Card Filter Component Check if cards get filtered when set to All 1`] = `
+Array [
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+  />,
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Array [
+          Object {
+            "height": "100%",
+            "padding": 20,
+          },
+          Object {
+            "backgroundColor": "#aacaaa",
+          },
+        ]
+      }
+      testID="Home.ScrollView"
+    >
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+           To Do List 
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ebecf0",
+              "borderRadius": 15,
+              "padding": 25,
+              "paddingBottom": 50,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "300",
+              }
+            }
+          >
+             Filter By
+          </Text>
+          <View>
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Show All",
+                    "testID": "FilterAll",
+                    "textColor": undefined,
+                    "value": "All",
+                  },
+                  Object {
+                    "label": "Show Completed",
+                    "testID": "FilterComplete",
+                    "textColor": undefined,
+                    "value": "Completed",
+                  },
+                  Object {
+                    "label": "Show Incomplete",
+                    "testID": "FilterIncomplete",
+                    "textColor": undefined,
+                    "value": "Incomplete",
+                  },
+                ]
+              }
+              numberOfLines={1}
+              onChange={[Function]}
+              selectedIndex={0}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+              testID="FilterInput"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              placeholder="Add something here you need to do!"
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "fontSize": 20,
+                  "fontWeight": "300",
+                  "lineHeight": 25,
+                  "marginTop": 10,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="AddCard-Input"
+              value=""
+            />
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginVertical": 10,
+                  "opacity": 1,
+                }
+              }
+              testID="AddCard-Button"
             >
               <Text
                 style={
@@ -184,8 +382,8 @@ Array [
                   "width": "100%",
                 }
               }
-              testID="Card.Input"
-              value="Test Message"
+              testID="Card-Input-1"
+              value="Test Message 0"
             />
             <View
               style={
@@ -217,7 +415,7 @@ Array [
                     "width": 70,
                   }
                 }
-                testID="Card.Delete"
+                testID="Card-Delete-1"
               >
                 <Text
                   style={
@@ -253,7 +451,2173 @@ Array [
                     "width": 100,
                   }
                 }
-                testID="Card.IsComplete"
+                testID="Card-IsComplete-1"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-2"
+              value="Test Message 1"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-2"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-2"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-3"
+              value="Test Message 2"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-3"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-3"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-4"
+              value="Test Message 3"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-5"
+              value="Test Message 4"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-6"
+              value="Test Message 5"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-6"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-6"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-7"
+              value="Test Message 6"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-7"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-7"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-8"
+              value="Test Message 7"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-8"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-8"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-9"
+              value="Test Message 8"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-9"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-9"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-10"
+              value="Test Message 9"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-10"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-10"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-11"
+              value="Test Message 1"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-11"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-11"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-12"
+              value="Test Message 2"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-12"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-12"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-13"
+              value="Test Message 3"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-13"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-13"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-14"
+              value="Test Message 4"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-14"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-14"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-15"
+              value="Test Message 5"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-15"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-15"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-16"
+              value="Test Message 6"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-16"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-16"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-17"
+              value="Test Message 7"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-17"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-17"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-18"
+              value="Test Message 8"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-18"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-18"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-19"
+              value="Test Message 9"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-19"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-19"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-20"
+              value="Test Message 10"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-20"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-20"
               >
                 <Text
                   style={
@@ -279,21 +2643,29 @@ Array [
             }
           }
         >
-          <Text>
+          <Text
+            testID="TotalItems"
+          >
              * Total items: 
-            1
+            20
           </Text>
-          <Text>
+          <Text
+            testID="CompletedItems"
+          >
              * Items completed: 
-            0
+            2
           </Text>
-          <Text>
+          <Text
+            testID="IncompleteItems"
+          >
              * Items not completed: 
-            1
+            18
           </Text>
-          <Text>
+          <Text
+            testID="Percentage"
+          >
              * Percent completed: 
-            0
+            10
           </Text>
         </View>
       </View>
@@ -302,7 +2674,7 @@ Array [
 ]
 `;
 
-exports[`Check Home Screen Components renders as expected 1`] = `
+exports[`Test Card Filter Component Check if cards get filtered when set to Completed 1`] = `
 Array [
   <RCTSafeAreaView
     emulateUnlessSupported={true}
@@ -367,19 +2739,19 @@ Array [
                 Array [
                   Object {
                     "label": "Show All",
-                    "testID": undefined,
+                    "testID": "FilterAll",
                     "textColor": undefined,
                     "value": "All",
                   },
                   Object {
                     "label": "Show Completed",
-                    "testID": undefined,
+                    "testID": "FilterComplete",
                     "textColor": undefined,
                     "value": "Completed",
                   },
                   Object {
                     "label": "Show Incomplete",
-                    "testID": undefined,
+                    "testID": "FilterIncomplete",
                     "textColor": undefined,
                     "value": "Incomplete",
                   },
@@ -387,7 +2759,7 @@ Array [
               }
               numberOfLines={1}
               onChange={[Function]}
-              selectedIndex={0}
+              selectedIndex={1}
               style={
                 Array [
                   Object {
@@ -396,6 +2768,7 @@ Array [
                   undefined,
                 ]
               }
+              testID="FilterInput"
             />
           </View>
           <View
@@ -423,7 +2796,7 @@ Array [
                   "width": "100%",
                 }
               }
-              testID="AddCard.Input"
+              testID="AddCard-Input"
               value=""
             />
             <View
@@ -443,7 +2816,7 @@ Array [
                   "opacity": 1,
                 }
               }
-              testID="AddCard.Button"
+              testID="AddCard-Button"
             >
               <Text
                 style={
@@ -457,6 +2830,234 @@ Array [
               </Text>
             </View>
           </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-4"
+              value="Test Message 3"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-5"
+              value="Test Message 4"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
         </View>
         <View
           style={
@@ -467,21 +3068,2506 @@ Array [
             }
           }
         >
-          <Text>
+          <Text
+            testID="TotalItems"
+          >
              * Total items: 
-            0
+            2
           </Text>
-          <Text>
+          <Text
+            testID="CompletedItems"
+          >
              * Items completed: 
-            0
+            2
           </Text>
-          <Text>
+          <Text
+            testID="IncompleteItems"
+          >
              * Items not completed: 
             0
           </Text>
-          <Text>
+          <Text
+            testID="Percentage"
+          >
              * Percent completed: 
-            0
+            100
+          </Text>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>,
+]
+`;
+
+exports[`Test Card Filter Component Check if cards get filtered when set to Incomplete 1`] = `
+Array [
+  <RCTSafeAreaView
+    emulateUnlessSupported={true}
+  />,
+  <View
+    onLayout={[Function]}
+    style={
+      Object {
+        "paddingBottom": 0,
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Array [
+          Object {
+            "height": "100%",
+            "padding": 20,
+          },
+          Object {
+            "backgroundColor": "#aacaaa",
+          },
+        ]
+      }
+      testID="Home.ScrollView"
+    >
+      <View>
+        <Text
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+           To Do List 
+        </Text>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#ebecf0",
+              "borderRadius": 15,
+              "padding": 25,
+              "paddingBottom": 50,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 18,
+                "fontWeight": "300",
+              }
+            }
+          >
+             Filter By
+          </Text>
+          <View>
+            <RNCPicker
+              items={
+                Array [
+                  Object {
+                    "label": "Show All",
+                    "testID": "FilterAll",
+                    "textColor": undefined,
+                    "value": "All",
+                  },
+                  Object {
+                    "label": "Show Completed",
+                    "testID": "FilterComplete",
+                    "textColor": undefined,
+                    "value": "Completed",
+                  },
+                  Object {
+                    "label": "Show Incomplete",
+                    "testID": "FilterIncomplete",
+                    "textColor": undefined,
+                    "value": "Incomplete",
+                  },
+                ]
+              }
+              numberOfLines={1}
+              onChange={[Function]}
+              selectedIndex={2}
+              style={
+                Array [
+                  Object {
+                    "height": 216,
+                  },
+                  undefined,
+                ]
+              }
+              testID="FilterInput"
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "maxWidth": "100%",
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              placeholder="Add something here you need to do!"
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "fontSize": 20,
+                  "fontWeight": "300",
+                  "lineHeight": 25,
+                  "marginTop": 10,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="AddCard-Input"
+              value=""
+            />
+            <View
+              accessible={true}
+              collapsable={false}
+              focusable={true}
+              onClick={[Function]}
+              onResponderGrant={[Function]}
+              onResponderMove={[Function]}
+              onResponderRelease={[Function]}
+              onResponderTerminate={[Function]}
+              onResponderTerminationRequest={[Function]}
+              onStartShouldSetResponder={[Function]}
+              style={
+                Object {
+                  "marginVertical": 10,
+                  "opacity": 1,
+                }
+              }
+              testID="AddCard-Button"
+            >
+              <Text
+                style={
+                  Object {
+                    "fontSize": 20,
+                    "fontWeight": "300",
+                  }
+                }
+              >
+                 + Add a card 
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-1"
+              value="Test Message 0"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-1"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-1"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-2"
+              value="Test Message 1"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-2"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-2"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-3"
+              value="Test Message 2"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-3"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-3"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-4"
+              value="Test Message 3"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-4"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-5"
+              value="Test Message 4"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#99d372",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-5"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Completed
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-6"
+              value="Test Message 5"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-6"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-6"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-7"
+              value="Test Message 6"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-7"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-7"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-8"
+              value="Test Message 7"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-8"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-8"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-9"
+              value="Test Message 8"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-9"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-9"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-10"
+              value="Test Message 9"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-10"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-10"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-11"
+              value="Test Message 1"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-11"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-11"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-12"
+              value="Test Message 2"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-12"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-12"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-13"
+              value="Test Message 3"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-13"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-13"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-14"
+              value="Test Message 4"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-14"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-14"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-15"
+              value="Test Message 5"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-15"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-15"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-16"
+              value="Test Message 6"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-16"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-16"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-17"
+              value="Test Message 7"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-17"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-17"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-18"
+              value="Test Message 8"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-18"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-18"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-19"
+              value="Test Message 9"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-19"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-19"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 13,
+                "flexDirection": "column",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "maxWidth": "100%",
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+              }
+            }
+          >
+            <TextInput
+              multiline={true}
+              onChangeText={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#fff",
+                  "borderRadius": 13,
+                  "color": "#000",
+                  "fontSize": 18,
+                  "fontWeight": "300",
+                  "lineHeight": 30,
+                  "padding": 15,
+                  "width": "100%",
+                }
+              }
+              testID="Card-Input-20"
+              value="Test Message 10"
+            />
+            <View
+              style={
+                Object {
+                  "flexDirection": "row",
+                }
+              }
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "#b24b63",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "marginRight": 10,
+                    "opacity": 1,
+                    "width": 70,
+                  }
+                }
+                testID="Card-Delete-20"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  Delete
+                </Text>
+              </View>
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "backgroundColor": "orange",
+                    "borderRadius": 10,
+                    "height": 30,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "width": 100,
+                  }
+                }
+                testID="Card-IsComplete-20"
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#fff",
+                      "fontSize": 15,
+                      "fontWeight": "300",
+                    }
+                  }
+                >
+                  In Progress
+                </Text>
+              </View>
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "fontSize": 30,
+              "fontWeight": "600",
+              "paddingVertical": 20,
+            }
+          }
+        >
+          <Text
+            testID="TotalItems"
+          >
+             * Total items: 
+            20
+          </Text>
+          <Text
+            testID="CompletedItems"
+          >
+             * Items completed: 
+            2
+          </Text>
+          <Text
+            testID="IncompleteItems"
+          >
+             * Items not completed: 
+            18
+          </Text>
+          <Text
+            testID="Percentage"
+          >
+             * Percent completed: 
+            10
           </Text>
         </View>
       </View>

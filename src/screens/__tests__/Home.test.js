@@ -191,6 +191,24 @@ describe('Testing if stats render correctly', () => {
 
 describe('Test Card Filter Component', () => {
 
+  beforeAll (() => {
+    // Adding list of cards
+    const {toJSON, getByTestId} = render(component);
+    const inputField = getByTestId('AddCard-Input');
+    const addCardButton = getByTestId('AddCard-Button');
+    let i = 0;
+    for (i= 1; i<=10; i++) {
+      fireEvent.changeText(inputField, 'Test Message ' + i);
+      fireEvent.press(addCardButton);
+    }
+
+    let isCompleteButton;
+    for (i= 1; i<4; i++) {
+      isCompleteButton = getByTestId('Card-IsComplete-'+i);
+      fireEvent.press(isCompleteButton);
+    }
+  });
+
   test('Check if filter value can be changed to Completed', () => {
     const { getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
@@ -211,5 +229,35 @@ describe('Test Card Filter Component', () => {
     fireEvent(filterInput, 'valueChange', 'All')
     expect(store.getState().cards.filter).toBe('All')
   });
+
+  test('Check if changing filter value changes', () => {
+    const { getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'Completed')
+    expect(store.getState().cards.filter).toBe('Completed')
+  });
+
+  test('Check if cards get filtered when set to Completed', () => {
+    const {toJSON, getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'Completed')
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  test('Check if cards get filtered when set to All', () => {
+    const {toJSON, getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'All')
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+  test('Check if cards get filtered when set to Incomplete', () => {
+    const {toJSON, getByTestId} = render(component);    
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'Incomplete')
+    expect(toJSON()).toMatchSnapshot();
+  });
+
+
 })
 
