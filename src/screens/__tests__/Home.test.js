@@ -21,13 +21,13 @@ const percentCompleted = (completed, total) => {
 }
 
 describe('Check Home Screen Components', () => {
-  test('should render as expected', () => {
+  test('Given the user goes to the Home Screen, the screen should render as expected', () => {
     jest.spyOn(global.Math, 'floor').mockReturnValue(0);
     const {toJSON } = render(component);
     expect(toJSON()).toMatchSnapshot();
   });
 
-  test('should display add card input text field', () => {
+  test('Given the user is on the home screen, the add card input should be rendered', () => {
     const {getByTestId } = render(component);
     const inputField = getByTestId('AddCard-Input');
     expect(inputField).toBeTruthy();
@@ -60,7 +60,7 @@ describe('Testing Card Component', () => {
     expect(editInputField).toBeTruthy();
   });
 
-  test('should be able to edit a card', () => {
+  test("Given that the Card input field has been edited with the message 'Edited Message',- the card redux state should be updated", () => {
     const {toJSON, getByTestId} = render(component);    
     const editInputField = getByTestId('Card-Input-1');
     fireEvent.changeText(editInputField, 'Edited Message');
