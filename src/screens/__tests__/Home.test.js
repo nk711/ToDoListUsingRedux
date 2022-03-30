@@ -21,13 +21,13 @@ const percentCompleted = (completed, total) => {
 }
 
 describe('Check Home Screen Components', () => {
-  test('Given the user goes to the Home Screen, the screen should render as expected', () => {
+  test('When the user loads the app, the screen should render as expected', () => {
     jest.spyOn(global.Math, 'floor').mockReturnValue(0);
     const {toJSON } = render(component);
     expect(toJSON()).toMatchSnapshot();
   });
 
-  test('Given the user is on the home screen, the add card input should be rendered', () => {
+  test('When the user is on the home screen, the add card input should be rendered', () => {
     const {getByTestId } = render(component);
     const inputField = getByTestId('AddCard-Input');
     expect(inputField).toBeTruthy();
@@ -36,32 +36,35 @@ describe('Check Home Screen Components', () => {
 
 });
 
-describe('Testing Card Component', () => {
-  test('should be able to add a new card', () => {
-    const {toJSON, getByTestId} = render(component);
+describe('Testing Card Component Functions', () => {
+
+  beforeAll(() => {
+    const { getByTestId} = render(component);
     const inputField = getByTestId('AddCard-Input');
     const addCardButton = getByTestId('AddCard-Button');
     fireEvent.changeText(inputField, 'Test Message');
     fireEvent.press(addCardButton)
-    const card =  store.getState().cards.items[0]
+  })
 
+  
+  test('should handle a card being added to an empty list', () => {
+    const card =  store.getState().cards.items[0]
     const item = {
       key: 1,
       todo: 'Test Message',
       isComplete: false,
     }
-
     expect(card).toEqual(item)
   });
 
-  test('should display card todo input text field', () => {
-    const {getByTestId } = render(component);
+  test('Given a card is added, the field to edit the card content should be rendered', () => {
+    const { getByTestId } = render(component);
     const editInputField = getByTestId('Card-Input-1');
     expect(editInputField).toBeTruthy();
   });
 
-  test("Given that the Card input field has been edited with the message 'Edited Message',- the card redux state should be updated", () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given a card is added, an update to the card content using the "Card Input" field should update the state', () => {
+    const { getByTestId} = render(component);    
     const editInputField = getByTestId('Card-Input-1');
     fireEvent.changeText(editInputField, 'Edited Message');
 
@@ -69,16 +72,16 @@ describe('Testing Card Component', () => {
     expect(card.todo).toEqual('Edited Message')
   });
 
-  test('should be able to set a card to completed', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given a card is added, updating the card status to completed by pressing the "Card-IsComplete" button should update the state', () => {
+    const { getByTestId} = render(component);    
     const isCompleteButton = getByTestId('Card-IsComplete-1');
-    fireEvent.press(isCompleteButton, 'Edited Message');
+    fireEvent.press(isCompleteButton);
     const card =  store.getState().cards.items[0]
     expect(card.isComplete).toBe(true)
   });
 
-  test('should be able to delete a card', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given a card is added, deleting a card by clicking the "Card-Delete" button should update the state accordingly', () => {
+    const { getByTestId} = render(component);    
     const deleteButton = getByTestId('Card-Delete-1');
     fireEvent.press(deleteButton, 'Edited Message');
     const list =  store.getState().cards.items
@@ -89,11 +92,11 @@ describe('Testing Card Component', () => {
 
 
 
-describe('Testing if stats render correctly', () => {
+describe('Testing Card Statistics Component', () => {
   
   beforeAll (() => {
     // Adding list of cards
-    const {toJSON, getByTestId} = render(component);
+    const {getByTestId} = render(component);
     const inputField = getByTestId('AddCard-Input');
     const addCardButton = getByTestId('AddCard-Button');
     for (let i= 0; i<10; i++) {
@@ -102,89 +105,95 @@ describe('Testing if stats render correctly', () => {
     }
   });
 
-  test('Check if Completed Items label is rendered ', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given that 10 cards are added, the Completed Items label should be rendered ', () => {
+    const { getByTestId } = render(component);    
     const completedItems = getByTestId('CompletedItems');
     expect(completedItems).toBeTruthy();
   });
 
-  test('Check if Completed Items is set as 0 items', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given that 10 cards are added, the Completed Items label should be set to 0', () => {
+    const { getByTestId } = render(component);    
     const completedItems = getByTestId('CompletedItems');
     expect(completedItems.props.children).toEqual([" * Items completed: ", 0]);
   });
 
-  test('Check if Total Items label is rendered ', () => {
+  test('Given that 10 cards are added, the Total Items label should be rendered ', () => {
     const {toJSON, getByTestId} = render(component);    
     const totalItems = getByTestId('TotalItems');
     expect(totalItems).toBeTruthy();
   });
 
-  test('Check if Total Items label is set as 10 items', () => {
+  test('Given that 10 cards are added, the Total Items label should be set to 10 ', () => {
     const {toJSON, getByTestId} = render(component);    
     const totalItems = getByTestId('TotalItems');
     expect(totalItems.props.children).toEqual([" * Total items: ", 10]);
   });
 
-  test('Check if Incomplete Items label is rendered ', () => {
+  test('Given that 10 cards are added, the Incomplete Items label should be rendered ', () => {
     const {toJSON, getByTestId} = render(component);    
     const incompleteItems = getByTestId('IncompleteItems');
     expect(incompleteItems).toBeTruthy();
   });
 
-  test('Check if Incomplete Items label is set as 10 ', () => {
+  test('Given that 10 cards are added, the Incomplete Items label should be set to 10 ', () => {
     const {toJSON, getByTestId} = render(component);    
     const incompleteItems = getByTestId('IncompleteItems');
    expect(incompleteItems.props.children).toEqual([" * Items not completed: ", 10]);
   });
 
-  test('Check if percentage label is rendered ', () => {
+  test('Given that 10 cards are added, the percentage label should be rendered ', () => {
     const {toJSON, getByTestId} = render(component);    
     const percentageText = getByTestId('Percentage');
     expect(percentageText).toBeTruthy();
   });
 
-  test('Check if percentage label is set as 0', () => {
+  test('Given that 10 cards are added, the percentage label should be set to 0', () => {
     const {toJSON, getByTestId} = render(component);    
     const percentageText = getByTestId('Percentage');
     expect(percentageText.props.children).toEqual([" * Percent completed: ", 0]);
 
   });
 
-  test('Check if Completed Items is set as 5 items after setting 5 cards as completed', () => {
-    const {toJSON, getByTestId} = render(component);    
+
+  test('Given that 10 cards are added and 5 cards are set as completed, the Completed Items label should be set to 5', () => {
+    const {toJSON, getByTestId} = render(component); 
+    let isCompleteButton;   
     for (let i= 1; i<6; i++) {
-      let isCompleteButton = getByTestId('Card-IsComplete-'+i);
+      isCompleteButton = getByTestId('Card-IsComplete-'+i);
       fireEvent.press(isCompleteButton);
     }
     const completedItems = getByTestId('CompletedItems');
     expect(completedItems.props.children).toEqual([" * Items completed: ", 5]);
   });
 
-  test('Check if Total Items label is set as 10 items after setting 5 cards as completed', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given that 10 cards are added and 5 cards are set as completed, the Total Items label should be set to 10', () => {
+    const {toJSON, getByTestId} = render(component); 
+    let isCompleteButton;   
+    for (let i= 1; i<6; i++) {
+      isCompleteButton = getByTestId('Card-IsComplete-'+i);
+      fireEvent.press(isCompleteButton);
+    }   
     const totalItems = getByTestId('TotalItems');
     expect(totalItems.props.children).toEqual([" * Total items: ", 10]);
-
   });
 
   
-  test('Check if Incomplete Items label is set as 5 items after setting 5 cards as completed', () => {
-    const {toJSON, getByTestId} = render(component);    
+  test('Given that 10 cards are added and 5 cards are set as completed, the Incomplete Items label should be set to 5', () => {
+    const {toJSON, getByTestId} = render(component); 
+    let isCompleteButton;   
+    for (let i= 1; i<6; i++) {
+      isCompleteButton = getByTestId('Card-IsComplete-'+i);
+      fireEvent.press(isCompleteButton);
+    }   
     const incompleteItems = getByTestId('IncompleteItems');
     expect(incompleteItems.props.children).toEqual([" * Items not completed: ", 5]);
   });
 
-
-  test('Check if percentage label is set as 50, after setting 5 cards as completed', () => {
+  test('Given that 10 cards are added and 5 cards are set as completed, the percentage label should be set to 50', () => {
     const {toJSON, getByTestId} = render(component);    
     const percentageText = getByTestId('Percentage');
     expect(percentageText.props.children).toEqual([" * Percent completed: ", 50]);
-
   });
-
-
-
 
 });
 
@@ -193,7 +202,7 @@ describe('Test Card Filter Component', () => {
 
   beforeAll (() => {
     // Adding list of cards
-    const {toJSON, getByTestId} = render(component);
+    const { getByTestId} = render(component);
     const inputField = getByTestId('AddCard-Input');
     const addCardButton = getByTestId('AddCard-Button');
     let i = 0;
@@ -207,51 +216,54 @@ describe('Test Card Filter Component', () => {
       isCompleteButton = getByTestId('Card-IsComplete-'+i);
       fireEvent.press(isCompleteButton);
     }
+
+    const filterInput = getByTestId('FilterInput');
+    fireEvent(filterInput, 'valueChange', 'All')
   });
 
-  test('Check if filter value can be changed to Completed', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, check if the filter value can be changed to Completed', () => {
     const { getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'Completed')
     expect(store.getState().cards.filter).toBe('Completed')
   });
 
-  test('Check if filter value can be changed to Incomplete', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, check if the filter value can be changed to Incomplete', () => {
     const {getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'Incomplete')
     expect(store.getState().cards.filter).toBe('Incomplete')
   });
 
-  test('Check if filter value can be changed to All', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, check if the filter value can be changed to All', () => {
     const { getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'All')
     expect(store.getState().cards.filter).toBe('All')
   });
 
-  test('Check if changing filter value changes', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, check if changing the filter value changes the state', () => {
     const { getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'Completed')
     expect(store.getState().cards.filter).toBe('Completed')
   });
 
-  test('Check if cards get filtered when set to Completed', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, Check if the list of cards get filtered when the filter is set to Completed', () => {
     const {toJSON, getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'Completed')
     expect(toJSON()).toMatchSnapshot();
   });
 
-  test('Check if cards get filtered when set to All', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, Check if the list of cards get filtered when the filter is set to All', () => {
     const {toJSON, getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'All')
     expect(toJSON()).toMatchSnapshot();
   });
 
-  test('Check if cards get filtered when set to Incomplete', () => {
+  test('Given 10 cards is added and 3 cards are set as completed, Check if the list of cards get filtered when the filter is set to Incomplete', () => {
     const {toJSON, getByTestId} = render(component);    
     const filterInput = getByTestId('FilterInput');
     fireEvent(filterInput, 'valueChange', 'Incomplete')
