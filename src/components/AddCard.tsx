@@ -35,6 +35,8 @@ export const AddCard = () => {
             <TouchableOpacity 
                 testID= "AddCard-Button"
                 style = { styles.addButton }
+                accessible={true}
+                accessibilityLabel="Press to add Task"
                 onPress= {addItem}>
                     <Text style = {styles.addButtonText}> + Add a card </Text>
             </TouchableOpacity>

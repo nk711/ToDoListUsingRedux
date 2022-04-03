@@ -24,7 +24,7 @@ export const CardStats = () => {
     const formattedPercentCompleted = Math.round(percentCompleted)
 
     return ( 
-        <View style={styles.stats}>
+        <View style={styles.stats}  accessible={true} accessibilityLabel="Statistics">
             <Text testID="TotalItems"> * Total items: {total}</Text>
             <Text testID="CompletedItems"> * Items completed: {totalCompleted}</Text>
             <Text testID="IncompleteItems"> * Items not completed: {totalIncomplete}</Text>
