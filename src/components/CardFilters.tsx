@@ -24,10 +24,8 @@ export const CardFilters = () => {
         <Picker
             testID= "FilterInput"
             selectedValue= { filter }
-            onValueChange= {(value: string) => updateFilter(value)}
-            accessible={true}
-            accessibilityLabel="Pick a filter">
-            <Picker.Item testID = 'FilterAll' style={styles.options} label='Show All' value='All' />
+            onValueChange= {(value: string) => updateFilter(value)}>
+            <Picker.Item testID = 'FilterAll' style={styles.options} label='Show All' value='All'/>
             <Picker.Item testID = 'FilterComplete' style={styles.options} label='Show Completed' value='Completed'/>
             <Picker.Item testID = 'FilterIncomplete' style={styles.options} label='Show Incomplete' value='Incomplete'/>
         </Picker>

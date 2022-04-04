@@ -51,8 +51,6 @@ export const Card = ({item} : any) => {
                 <TouchableOpacity
                     testID= {`Card-Delete-`+ item.key}
                     style = {styles.delete}
-                    accessible={true}
-                    accessibilityLabel="Press to delete this Task"
                     onPress= {deleteItem}>
                         <Text style = { styles.buttonText}>Delete</Text>
                 </TouchableOpacity> 
@@ -61,8 +59,6 @@ export const Card = ({item} : any) => {
                     style = {
                         item.isComplete ? (styles.statusComplete) : (styles.statusInProgress)
                     }
-                    accessible={true}
-                    accessibilityLabel = {item.isComplete ? "Press to set task to in progress" : "Press to set task to completed"}
                     onPress= {toggleComplete}
                     >
                         <Text style = { styles.buttonText}>{ item.isComplete ? ('Completed') : ('In Progress')}</Text>
